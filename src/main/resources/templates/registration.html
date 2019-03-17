@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="fragments/header :: header-css"/>
+    <title>Регистрация</title>
+</head>
+<body>
+
+<div th:if="${errorMessage}" th:utext="${errorMessage}"
+     style="color:red;font-style:italic;">
+</div>
+
+<div class="container" style="width: 300px; margin: auto;">
+<h2 class="form-signin-heading">Регистрация: </h2>
+<form th:action="@{/registration}" th:object="${user}" method="post">
+    <table>
+        <tr>
+            <td>Логин:</td>
+            <td><input class="form-control input-lg" type="text" th:field="*{login}"  required="true" /></td>
+        </tr>
+        <tr>
+            <td>Пароль:</td>
+            <td><input class="form-control input-lg" type="password" th:field="*{password}"  required="true" /></td>
+        </tr>
+        <tr>
+            <td>Имя:</td>
+            <td><input class="form-control input-lg" type="text" th:field="*{firstName}" required="true" /></td>
+        </tr>
+        <tr>
+            <td>Фамилия:</td>
+            <td><input class="form-control input-lg" type="text" th:field="*{lastName}"  required="true"/></td>
+        </tr>
+        <tr>
+            <td>Отчество:</td>
+            <td><input class="form-control input-lg" type="text" th:field="*{middleName}"  required="true"/></td>
+        </tr>
+        <tr>
+            <td>Электронный адрес:</td>
+            <td><input class="form-control input-lg" type="text" th:field="*{email}"  required="true"/></td>
+        </tr>
+    </table>
+    
+    <input class="btn btn-lg btn-primary btn-block" type="submit" value="Регистрация"/>
+</form>
+</div>
+ 
+</body>
+</html>

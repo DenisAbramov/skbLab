@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="fragments/header :: header-css"/>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="alert alert-success">Данные успешно приняты, ответ будет направлен на адрес электронной почты
+        <span th:utext="${user.email}"></span>
+    </h1>
+    <a th:href="@{/registration}">Назад</a>
+</div>
+
+</body>
+</html>
